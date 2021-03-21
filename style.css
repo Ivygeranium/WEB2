@@ -1,0 +1,113 @@
+:root{
+    --Birch: #F2F4EF;
+    --ClearDay: #C2E3F4;
+    --Ronchi: #EFB730;
+    --Cinder: #030305;
+  }
+
+html {
+  background-color: var(--Birch);
+  color: var(--Cinder);
+}
+
+body {
+  margin: 0;
+  padding-top: 53px;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  /* background-color: var(--Ronchi); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  padding: 1rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+main {
+  padding: 3rem;
+  height: 100%;
+}
+
+h1, nav {
+  display: inline;
+  text-align: center;
+  margin: 0;
+  /* padding: 30px; */
+}
+
+.menu {
+  color: var(--Cinder);
+  background-color: var(--ClearDay);
+  opacity: 0;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url('birch1.jpg');
+  /* background-color: var(--Ronchi); */
+
+  /* Set a specific height */
+  min-height: 700px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+  bottom: 53px;
+
+  z-index: 1;
+
+  color: var(--Cinder);
+  text-align: center;
+  font-size: 200px;
+  padding-top: 200px;
+
+}
+
+input[id="DarkMode"] {
+  display:none;
+}
+input[id="DarkMode"] + label {
+  cursor:pointer;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+input[id="menu"] {display:none;}
+input[id="menu"] + label {display:inline-block;width:27px;height:18px;position:relative;cursor:pointer;}
+input[id="menu"] + label span {display:block;position:absolute;width:100%;height:3px;border-radius:30px;background:#000;transition:all .35s;}
+input[id="menu"] + label span:nth-child(1) {top:0;}
+input[id="menu"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);}
+input[id="menu"] + label span:nth-child(3) {bottom:0;}
+input[id="menu"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
+input[id="menu"]:checked + label span:nth-child(2) {opacity:0;}
+input[id="menu"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
+
+div[class="sidebar"] {
+  margin-top: 52px;
+  width:20%;
+  height:100%;
+  background:var(--Ronchi);
+  position:fixed;
+  top:0;
+  left:-310px;
+  transition:all .35s;
+}
+
+input[id="menu"]:checked + label + div {
+  left:0;
+}
