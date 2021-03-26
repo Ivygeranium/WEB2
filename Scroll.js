@@ -1,7 +1,7 @@
 $(window).on('scroll',function(e){
   var current = $(window).scrollTop();
 
-  if (current >= 100){
+  if (current >= 900){
     $('header').css('backgroundColor', '#EFB730');
   }
   else {
